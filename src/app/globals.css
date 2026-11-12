@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  /* 画面全体に影響するUIだけを共通の重なり順で管理 */
+  --z-header: 20;
+  --z-floating: 30;
+  --z-modal: 40;
+  --z-loading: 50;
+
+  /* 透明度 */
+  --opacity: 0.7;
+}
+
+html.loading-screen-visited #loading-screen {
+  display: none;
+}
+
+/* Tailwind のユーティリティ（bg-green / text-white など）用 */
+@theme {
+  /* カラー */
+  --color-black: #333333;
+  --color-white: #f9f6f1;
+  --color-whiteAccent: #fff;
+  --color-green: #047836;
+  --color-red: #8b1c1a;
+  --color-dotGreen: #b6b9b0;
+
+  --spacing: 0.25rem; /* 4px*/
+
+  /* ビューポート追加 */
+
+  /* 16px以上 */
+  --breakpoint-sssm: 1rem;
+
+  /* 350px以上 */
+  --breakpoint-ssm: 21.875rem;
+
+  /* 450px以上 */
+  --breakpoint-base: 28.125rem;
+
+  /* 640px以上 */
+  --breakpoint-sm: 40rem;
+
+  /* 768px以上 */
+  --breakpoint-md: 48rem;
+
+  /* 900px以上 */
+  --breakpoint-m: 56.25rem;
+
+  /* 1024px以上 */
+  --breakpoint-lg: 64rem;
+
+  /* 1280px以上 */
+  --breakpoint-xl: 80rem;
+
+  /* 1400px以上 */
+  --breakpoint-l: 87.5rem;
+
+  /* 1441px以上 */
+  --breakpoint-ll: 90.0625rem;
+
+  /* 1536px以上 */
+  --breakpoint-2xl: 96rem;
+
+  /* transition時 */
+  --default-transition-duration: 300ms;
+
+  /* hover:opacity-hover */
+  --opacity-hover: 70%;
+}
+
+@layer base {
+  /* TailwindにリセットCSSは内蔵されているので、重複は整理する */
+  /* *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  } */
+
+  html {
+    /* スムーススクロール */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-white);
+    font-family: var(--font-geist-noto-serif-jp), sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--color-black);
+
+    @media (width >= 48rem) {
+      font-size: 1rem;
+    }
+  }
+
+  [type="button"],
+  a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  // 自動でフォーマット
+  "editor.formatOnSave": true,
+
+  // フォーマットはprettierを使う
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // 保存時に一部修正してくれる
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "tailwindCSS.experimental.configFile": "src/app/globals.css",
+
+  // ウィンドウ幅で折り返す
+  //  "editor.wordWrap": "on"
+
+  // スニペットを候補の一番上に表示
+  "editor.snippetSuggestions": "top"
+}
